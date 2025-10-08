@@ -1,0 +1,85 @@
+idf_component_register(
+        SRC_DIRS 
+                freertos
+                port
+                ../../../LuatOS/luat/modules 
+                ../../../LuatOS/luat/vfs
+                ../../../LuatOS/components/lua-cjson
+                ../../../LuatOS/components/eink
+                ../../../LuatOS/components/epaper
+                ../../../LuatOS/components/u8g2
+                ../../../LuatOS/components/fatfs
+                ../../../LuatOS/components/lfs
+                ../../../LuatOS/components/minmea 
+                ../../../LuatOS/components/cjson
+                ../../../LuatOS/components/coremark
+                ../../../LuatOS/components/sfud
+                ../../../LuatOS/components/sfd
+                ../../../LuatOS/components/flashdb/src
+                ../../../LuatOS/components/fal/src
+                ../../../LuatOS/components/lcd
+                ../../../LuatOS/components/ymodem
+                ../../../LuatOS/components/cmux
+                ../../../LuatOS/components/shell
+                ../../../LuatOS/components/gtfont
+                ../../../LuatOS/components/tjpgd
+                ../../../LuatOS/components/qrcode
+                ../../../LuatOS/components/luatfonts
+                ../../../LuatOS/components/common
+                ../../../LuatOS/components/lora
+                ../../../LuatOS/components/lora/sx126x
+                ../../../LuatOS/components/mlx90640-library
+                ../../../LuatOS/components/crypto
+                ../../../LuatOS/components/iotauth
+                ../../../LuatOS/components/i2c-tools
+                ../../../LuatOS/components/serialization/protobuf
+
+        INCLUDE_DIRS include 
+                ../../../LuatOS/lua/include 
+                ../../../LuatOS/luat/include 
+                ../../../LuatOS/components/lua-cjson
+                ../../../LuatOS/components/eink
+                ../../../LuatOS/components/epaper
+                ../../../LuatOS/components/u8g2
+                ../../../LuatOS/components/fatfs
+                ../../../LuatOS/components/lfs
+                ../../../LuatOS/components/minmea
+                ../../../LuatOS/components/cjson
+                ../../../LuatOS/components/coremark
+                ../../../LuatOS/components/sfud
+                ../../../LuatOS/components/sfd
+                ../../../LuatOS/components/flashdb/inc
+                ../../../LuatOS/components/fal/inc
+                ../../../LuatOS/components/lcd
+                ../../../LuatOS/components/ymodem
+                ../../../LuatOS/components/cmux
+                ../../../LuatOS/components/shell
+                ../../../LuatOS/components/gtfont
+                ../../../LuatOS/components/tjpgd
+                ../../../LuatOS/components/qrcode
+                ../../../LuatOS/components/luatfonts
+                ../../../LuatOS/components/common
+                ../../../LuatOS/components/mlx90640-library
+                ../../../LuatOS/components/iotauth
+                ../../../LuatOS/components/i2c-tools
+                ../../../LuatOS/components/serialization/protobuf
+
+        REQUIRES 
+                lua 
+                freertos 
+                spiffs 
+                vfs 
+                esp_adc_cal 
+                bt mbedtls 
+                esp_http_client 
+                esp_hw_support 
+                mqtt 
+                sdmmc 
+                fatfs 
+                led_strip 
+                miniz 
+                esp_websocket_client 
+                libhelix-mp3
+)
+
+idf_build_set_property(C_COMPILE_OPTIONS "-D__LUATOS__=1 -Wno-error=unused-const-variable -Wno-error=pointer-sign" APPEND)
